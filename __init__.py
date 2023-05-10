@@ -12,7 +12,7 @@ import turtle
 class UcToday(tk.Tk):
 
     def __init__(self):
-        intro = TurtleHeart()
+        TurtleHeart()
 
         super().__init__()
 
@@ -29,13 +29,16 @@ class UcToday(tk.Tk):
         self.label = tk.Label(self, text='Cuzinho hoje? rs', font=('Arial', 20, 'bold'), bg='pink', relief='solid')
         self.label.pack(side='top', pady=50)
 
+        
+        self.label_aguarde = tk.Label(self, text='By Lucas Lourenco\n@lucaslourencoo__', font=('Arial', 7, 'bold'), bg='black', fg='white')
+        self.label_aguarde.pack(side='right', pady=10)
+
         self.botao_sim = tk.Button(self, text='Claro, gatinho', font=('Arial', 16, 'bold'), bg='red', fg='white', command=self._clicando_sim, width=12, height=2)
         self.botao_sim.pack(side='left', padx=50)
 
         self.botao_nao = tk.Button(self, text='Não', font=('Arial', 16, 'bold'), bg='red', fg='white', width=12, height=2)
         self.botao_nao.pack(side='right', padx=50)
 
-        
         self.botao_nao.bind("<Enter>", self._proximidade_ao_nao)
 
 
@@ -61,7 +64,7 @@ class TurtleHeart():
 
         screen = turtle.Screen()
         screen.bgcolor("#800000")
-        screen.title("Olá")
+        screen.title("Bem vinda!")
 
 
         pen = turtle.Turtle()
