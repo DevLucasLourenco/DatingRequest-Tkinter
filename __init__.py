@@ -61,7 +61,7 @@ class TurtleHeart():
 
         screen = turtle.Screen()
         screen.bgcolor("#800000")
-        screen.title("Tela de introdução")
+        screen.title("Olá")
 
 
         pen = turtle.Turtle()
