@@ -16,7 +16,7 @@ class UcToday(tk.Tk):
 
         super().__init__()
 
-        self.title('UcToday')  
+        self.title('Dating Request by Lucas Lourenço')  
         self.geometry('1000x600')
         self.resizable(False, False)
         
