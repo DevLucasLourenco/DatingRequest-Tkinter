@@ -26,7 +26,7 @@ class UcToday(tk.Tk):
         self.background_label.place(x=0, y=0, relwidth=1, relheight=1)
         
 
-        self.label = tk.Label(self, text='Cuzinho hoje? rs', font=('Arial', 20, 'bold'), bg='pink', relief='solid')
+        self.label = tk.Label(self, text='Namora comigo? rs', font=('Arial', 20, 'bold'), bg='pink', relief='solid')
         self.label.pack(side='top', pady=50)
 
         
