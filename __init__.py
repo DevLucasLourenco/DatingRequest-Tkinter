@@ -13,7 +13,7 @@ class UcToday(tk.Tk):
 
     def __init__(self):
         TurtleHeart()
-
+        
         super().__init__()
 
         self.title('Dating Request by Lucas Lourenço')  
@@ -46,25 +46,22 @@ class UcToday(tk.Tk):
         self.botao_nao.place(x=random.randint(0, 800), y=random.randint(0, 550))
         
 
+    
     def _clicando_sim(self):        
         self.label_aguarde = tk.Label(self, text='Aguarde...', font=('Arial', 20, 'bold'), bg='pink')
-        self.label_aguarde.pack(side='left', pady=80)
-
-        self.update() # atualiza a janela para exibir o label "Aguarde..."
-
-        instancia = AbrirNavegador()
-
-        self.label_aguarde.destroy()
-
         
-        
+        nova_janela = NovaJanela(self)
+        nova_janela.wait_window()
+
+
+
 class TurtleHeart():
 
     def __init__(self) -> None:
 
         screen = turtle.Screen()
         screen.bgcolor("#800000")
-        screen.title("Bem vinda!")
+        screen.title("rsrs")
 
 
         pen = turtle.Turtle()
@@ -98,34 +95,20 @@ class TurtleHeart():
 
 
 
-class AbrirNavegador():
-
-    def __init__(self):
+class NovaJanela(tk.Toplevel):
+    def __init__(self, parent):
+        super().__init__(parent)
         
-        self.drive = None
-        self.marktime = None
-
-        self.ignicao_driver()
-        self.run()
+        self.title('rsrsrs')
+        self.geometry('800x600')
+        self.resizable(False, False)
 
 
-    def ignicao_driver(self):
-        servico = Service(ChromeDriverManager().install())
-        self.drive = webdriver.Chrome(service=servico)
-        self.drive.maximize_window()
-        self.marktime = WebDriverWait(self.drive, 90)
         
+        self.img = ImageTk.PhotoImage(Image.open("sfd.png"))
+        self.imagem_fundo_label = tk.Label(self, image=self.img)
+        self.imagem_fundo_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-    def run(self):
-        self.drive.get('https://www.youtube.com/watch?v=_MdQaLGwUF0')
-        self.drive.switch_to.new_window('https://google.com')
-        
-        janela_kamasutra = self.drive.window_handles[1]
-        self.drive.switch_to.window(janela_kamasutra)
-        self.drive.get('https://www.google.com/search?q=kamasutra&sxsrf=APwXEdf-bPOZT837-_X-McMekbFh6KmsGQ:1683677886279&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjRss_yvOn-AhXHA7kGHeGzBgkQ_AUoAXoECAEQAw&biw=1536&bih=714&dpr=1.25')
-
-        input()
-        
 
 
 app = UcToday()
