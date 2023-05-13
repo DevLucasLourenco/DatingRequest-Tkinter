@@ -1,12 +1,7 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
 import tkinter as tk
 import random
 import turtle
-
+from PIL import ImageTk, Image
 
 
 class UcToday(tk.Tk):
@@ -103,8 +98,6 @@ class NovaJanela(tk.Toplevel):
         self.geometry('800x600')
         self.resizable(False, False)
 
-
-        
         self.img = ImageTk.PhotoImage(Image.open("sfd.png"))
         self.imagem_fundo_label = tk.Label(self, image=self.img)
         self.imagem_fundo_label.place(x=0, y=0, relwidth=1, relheight=1)
